@@ -55,5 +55,8 @@ php httpServerTrieTree.php # 启动swoole服务
 > 敏感词库更新之后，执行 `php reloadDictTrieTree.php` ，即可更新数据字典对象
 
 
+使用 [算法](https://github.com/AbelZhou/PHP-TrieTree) ，使用swoole单独封装服务。
 
+
+[词库-参考](https://github.com/kejiaren/sensitive-word)
 
