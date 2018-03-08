@@ -31,7 +31,7 @@ php reloadDictTrieTree.php # 加载数据字典对象
 php httpServerTrieTree.php # 启动swoole服务
 ```
 
-访问 http://xxx.xxx.xxx.xxx:9002/?content=%E4%BB%8A%E6%99%9A%E5%8E%BB%E7%BA%A6%E7%82%AE%EF%BC%8Csm
+访问 http://xxx.xxx.xxx.xxx:9002/?content=今晚约炮哦，sm
 
 ```
 {
