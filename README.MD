@@ -71,7 +71,8 @@ chown www:www logs
 
 php reloadDictTrieTree.php # 加载数据字典对象
 
-nohup php ./httpServerTrieTree.php  &>> ./nohup.log  &
+nohup php ./httpServerTrieTree.php  &>> ./logs/nohup.log  &
 
 ```
 
+访问 http://xxx.xxx.xxx.xxx:9002/?content=sm
