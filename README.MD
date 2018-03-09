@@ -23,7 +23,7 @@ $config = [
 ```
 
 
-## 执行
+## 测试
 
 
 ```
@@ -60,5 +60,18 @@ php httpServerTrieTree.php # 启动swoole服务
 使用 [算法](https://github.com/AbelZhou/PHP-TrieTree) ，使用swoole单独封装服务。
 
 
-[词库-参考](https://github.com/kejiaren/sensitive-word)
+[词库](https://github.com/kejiaren/sensitive-word)参考
+
+
+## 部署
+
+```
+mkdir logs
+chown www:www logs
+
+php reloadDictTrieTree.php # 加载数据字典对象
+
+nohup php ./httpServerTrieTree.php  &>> ./nohup.log  &
+
+```
 
