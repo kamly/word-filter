@@ -10,6 +10,8 @@ swoole
 
 ## 配置
 
+vim src/config.php
+
 ```
 <?php
 $config = [
