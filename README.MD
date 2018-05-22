@@ -1,12 +1,12 @@
 
 
-# 敏感词过滤
+# php 敏感词过滤
 
 ## 环境
 
-ubnutu
-php 7.16
-swoole
+- ubnutu
+- php 7.16
+- swoole
 
 ## 部署
 
@@ -62,7 +62,9 @@ nohup php ./httpServerTrieTree.php  &>> ./logs/nohup.log &
 }
 ```
 
-> 敏感词库更新之后，执行 `php reloadDictTrieTree.php` ，即可更新数据字典对象
+## 注意
+
+- 敏感词库更新之后，执行 `php reloadDictTrieTree.php` ，即可更新数据字典对象
 
 - 使用 [字典树算法](https://github.com/AbelZhou/PHP-TrieTree) 
 
