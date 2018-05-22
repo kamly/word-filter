@@ -8,11 +8,17 @@ ubnutu
 php 7.16
 swoole
 
-## 配置
-
-vim src/config.php
+## 部署
 
 ```
+
+# 日志文件
+mkdir logs
+chown www:www logs
+
+
+# 配置文件
+vim src/config.php
 <?php
 $config = [
     'dict' => './dict/dict.txt',
@@ -20,18 +26,20 @@ $config = [
     'port' => 9002,
     'ip' => '0.0.0.0'
 ];
-```
 
 
-## 测试
-
-
-```
 php reloadDictTrieTree.php # 加载数据字典对象
-> 467.73580169678 M
 
-php httpServerTrieTree.php # 启动swoole服务
+
+# 启动方法1：启动swoole服务
+php httpServerTrieTree.php 
+
+
+# 启动方法2：挂载swoole服务
+nohup php ./httpServerTrieTree.php  &>> ./logs/nohup.log & 
 ```
+
+## 使用
 
 访问 http://xxx.xxx.xxx.xxx:9002/?content=今晚约炮哦，sm
 
@@ -56,23 +64,11 @@ php httpServerTrieTree.php # 启动swoole服务
 
 > 敏感词库更新之后，执行 `php reloadDictTrieTree.php` ，即可更新数据字典对象
 
+- 使用 [字典树算法](https://github.com/AbelZhou/PHP-TrieTree) 
 
-使用 [算法](https://github.com/AbelZhou/PHP-TrieTree) ，使用swoole单独封装服务。
+- 使用 [swoole](https://www.swoole.com/) 单独封装服务。
+
+- 使用的[参考词库](https://github.com/kejiaren/sensitive-word)
 
 
-[词库](https://github.com/kejiaren/sensitive-word)参考
 
-
-## 部署
-
-```
-mkdir logs
-chown www:www logs
-
-php reloadDictTrieTree.php # 加载数据字典对象
-
-nohup php ./httpServerTrieTree.php  &>> ./logs/nohup.log  &
-
-```
-
-访问 http://xxx.xxx.xxx.xxx:9002/?content=sm
